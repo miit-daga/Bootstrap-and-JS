@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task-1</title>
+    <style>
+        #i1{
+            text-align: center;
+            margin-top: 10%;
+        }
+        #i2{
+            margin-left: -5%;
+        }
+        #ans{
+            text-align: center;
+            margin-left: -13%;
+        }
+    </style>
+</head>
+<body>
+    <form id="i1">
+        <h1>Enter: <input id="in" type="number" required/></h1>
+        <br/><br/>
+        <button type="button" id="i2" class="btn btn-info btn-lg" onclick="Reverse()">Reverse</button>
+    </form>
+    <br/>
+    <br/>
+    <br/>
+    <h1 id="ans"></h1>
+    <script>
+        function Reverse()
+        {
+            var n=document.forms["i1"]["in"].value;
+            if(n=="")
+            {
+                alert("Enter the Number");
+            }
+            var r=String(n).split("");
+            if(r[0]=="-")
+            {
+                var k=r.slice(1,r.length).reverse();
+                document.getElementById("ans").innerHTML="Reverse: "+"-"+k.join("");
+            }
+            else
+            {
+                var k=r.reverse();
+                document.getElementById("ans").innerHTML="Reverse: "+k.join("");
+            }
+        }
+    </script>
+</body>
+</html>

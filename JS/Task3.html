@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task3</title>
+</head>
+
+<body>
+    <div style="background-color: white; height: 47vh; width: 40vw; border: 1px solid black; margin-left: 400px; margin-top: 100px;">
+        <br />
+        <form id="calcForm">
+            <p style="margin-left: 20px;">1st Number: <input id="firstNumber" type="number" required /></p>
+            <p style="margin-left: 20px;">2nd Number: <input id="secondNumber" type="number" required /></p>
+            <br />
+            <p style="margin-left: 20px;">
+                <button type="button" onclick="multiply()">Multiply</button>
+                <button type="button" onclick="divide()">Divide</button>
+            </p>
+            <br /><br />
+            <p style="margin-left: 20px;">The Result Is: <span id="result" style="font-size: large;"></span></p>
+        </form>
+    </div>
+
+    <script>
+        function multiply() {
+            var a = document.getElementById('firstNumber').value;
+            var b = document.getElementById('secondNumber').value;
+            if (a === "" || b === "") {
+                alert("Please fill in both numbers.");
+                return;
+            }
+            document.getElementById("result").innerHTML = a * b;
+        }
+
+        function divide() {
+            var a = document.getElementById('firstNumber').value;
+            var b = document.getElementById('secondNumber').value;
+            if (a === "" || b === "") {
+                alert("Please fill in both numbers.");
+                return;
+            }
+            if (b == 0) {
+                alert("Cannot divide by zero.");
+                return;
+            }
+            document.getElementById("result").innerHTML = a / b;
+        }
+    </script>
+</body>
+
+</html>
